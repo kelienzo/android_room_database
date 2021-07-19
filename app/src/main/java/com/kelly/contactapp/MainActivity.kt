@@ -54,7 +54,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         override fun onItemDelete(contact: Contact) {
-            database.contactDao().deleteContact(contact)
+            //database.contactDao().deleteContact(contact)
+            viewModel.deleteContact(database, contact)
         }
     }
 }

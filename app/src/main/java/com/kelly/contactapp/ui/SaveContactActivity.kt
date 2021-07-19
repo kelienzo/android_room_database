@@ -27,28 +27,28 @@ class SaveContactActivity : AppCompatActivity() {
         database = ContactDatabase.getDatabase(this)
 
         binding.btnSave.setOnClickListener {
-            addContact()?.let { Contact -> database.contactDao().addContact(Contact) }
+            addContact()
+        }
+    }
+
+    private fun addContact() {
+
+        val firstname = binding.textInputFirstName.editText?.text.toString()
+        val lastName = binding.textInputLastName.editText?.text.toString()
+        val cellNumber = binding.textInputNumber.editText?.text.toString()
+
+        if (firstname.isNotEmpty() && lastName.isNotEmpty() && cellNumber.isNotEmpty()) {
+
+            val contact = Contact(id = 0, firstname, lastName, cellNumber)
+            viewModel.addContact(database, contact)
+
             Toast.makeText(this, "Successfully Added", Toast.LENGTH_LONG).show()
+
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
-        }
-    }
+        } else {
+            Toast.makeText(this, "Please fill out all fields", Toast.LENGTH_LONG).show()
 
-    private fun inputCheck(): Boolean {
-        return binding.textInputFirstName.editText?.text.toString().trim().isNotEmpty() &&
-                binding.textInputLastName.editText?.text.toString().trim().isNotEmpty() &&
-                binding.textInputNumber.editText?.text.toString().trim().isNotEmpty()
-    }
-
-    private fun addContact(): Contact? {
-        if (inputCheck()) {
-            return Contact(
-                id = 0,
-                firstName = binding.textInputFirstName.editText?.text.toString(),
-                lastName = binding.textInputLastName.editText?.text.toString(),
-                cellNumber = binding.textInputNumber.editText?.text.toString()
-            )
         }
-        return null
     }
 }

@@ -11,11 +11,10 @@
         android:id="@+id/tvSaveContact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="Save Contact"
+        android:layout_marginTop="30dp"
+        android:text="@string/save_contact"
         android:textColor="@color/black"
         android:textSize="30sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,6 +24,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+        android:background="#D4DCD4"
+        app:hintTextColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/tvSaveContact"
         app:layout_constraintStart_toStartOf="@+id/tvSaveContact"
         app:layout_constraintTop_toBottomOf="@+id/tvSaveContact">
@@ -32,7 +33,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="First Name" />
+            android:hint="@string/first_name" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -40,6 +41,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+        android:background="#D4DCD4"
+        app:hintTextColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/textInputFirstName"
         app:layout_constraintStart_toStartOf="@+id/textInputFirstName"
         app:layout_constraintTop_toBottomOf="@+id/textInputFirstName">
@@ -47,7 +50,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Last Name" />
+            android:hint="@string/last_name" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -55,6 +58,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+        android:background="#D4DCD4"
+        app:hintTextColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/textInputLastName"
         app:layout_constraintStart_toStartOf="@+id/textInputLastName"
         app:layout_constraintTop_toBottomOf="@+id/textInputLastName">
@@ -62,19 +67,22 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Phone number"
+            android:hint="@string/phone_number"
             android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btnSave"
-        android:layout_width="127dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="48dp"
-        android:backgroundTint="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/round_style"
+        android:backgroundTint="#02B509"
         android:clickable="true"
         android:focusable="true"
-        android:text="Save"
+        android:text="@string/save"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/textInputNumber"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="@+id/textInputNumber"

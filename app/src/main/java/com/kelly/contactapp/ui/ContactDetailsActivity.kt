@@ -14,9 +14,10 @@ class ContactDetailsActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.apply {
-            tvFirst.text = intent.getStringExtra("first_name")
-            tvLast.text = intent.getStringExtra("last_name")
-            tvNumber.text = intent.getStringExtra("cell_number")
+            textInputUpdateFirstName.editText?.setText(intent.getStringExtra("first_name"))
+            textInputUpdateLastName.editText?.setText(intent.getStringExtra("last_name"))
+            textInputUpdatePhoneNumber.editText?.setText(intent.getStringExtra("cell_number"))
         }
+
     }
 }

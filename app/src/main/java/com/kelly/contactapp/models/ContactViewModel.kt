@@ -10,7 +10,7 @@ class ContactViewModel : ViewModel() {
         contactsLiveData.postValue(database.contactDao().getAllContacts())
     }
 
-    fun saveContact(database: ContactDatabase, contact: Contact) {
+    fun addContact(database: ContactDatabase, contact: Contact) {
         database.contactDao().addContact(contact)
         getContact(database)
     }

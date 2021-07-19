@@ -4,42 +4,87 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
     tools:context=".ui.ContactDetailsActivity">
 
     <TextView
-        android:id="@+id/tvFirst"
+        android:id="@+id/tvUpdateContact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="64dp"
-        android:text="First Name"
+        android:layout_marginTop="30dp"
+        android:text="@string/update_contact"
         android:textColor="@color/black"
-        android:textSize="25sp"
-        android:textStyle="bold"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvLast"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputUpdateFirstName"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:text="Last Name"
-        app:layout_constraintStart_toEndOf="@+id/tvFirst"
-        app:layout_constraintTop_toTopOf="@+id/tvFirst" />
+        android:layout_marginTop="30dp"
+        android:background="#D4DCD4"
+        app:hintTextColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/tvUpdateContact"
+        app:layout_constraintStart_toStartOf="@+id/tvUpdateContact"
+        app:layout_constraintTop_toBottomOf="@+id/tvUpdateContact">
 
-    <TextView
-        android:id="@+id/tvNumber"
-        android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/update_first_name" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputUpdateLastName"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:text="Phone Number"
-        app:layout_constraintStart_toStartOf="@+id/tvFirst"
-        app:layout_constraintTop_toBottomOf="@+id/tvFirst" />
+        android:layout_marginTop="30dp"
+        android:background="#D4DCD4"
+        app:hintTextColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/textInputUpdateFirstName"
+        app:layout_constraintStart_toStartOf="@+id/textInputUpdateFirstName"
+        app:layout_constraintTop_toBottomOf="@+id/textInputUpdateFirstName">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/update_last_name" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputUpdatePhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="#D4DCD4"
+        app:hintTextColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/textInputUpdateLastName"
+        app:layout_constraintStart_toStartOf="@+id/textInputUpdateLastName"
+        app:layout_constraintTop_toBottomOf="@+id/textInputUpdateLastName">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/update_phone_number"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/round_style"
+        android:backgroundTint="#0040FF"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/update"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/textInputUpdatePhoneNumber"
+        app:layout_constraintStart_toStartOf="@+id/textInputUpdatePhoneNumber"
+        app:layout_constraintTop_toBottomOf="@+id/textInputUpdatePhoneNumber" />
 </androidx.constraintlayout.widget.ConstraintLayout>
