@@ -9,7 +9,7 @@ import com.kelly.contactapp.models.Contact
 class ContactAdapter(var contacts: List<Contact>, val listener: OnContactItemClickListener) :
     RecyclerView.Adapter<ContactAdapter.ContactViewHolder>() {
 
-    inner class ContactViewHolder(val binding: ContactListBinding) :
+    inner class ContactViewHolder(private val binding: ContactListBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun data(contact: Contact) {

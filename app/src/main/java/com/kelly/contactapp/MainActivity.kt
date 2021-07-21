@@ -3,6 +3,8 @@ package com.kelly.contactapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
 import com.kelly.contactapp.databinding.ActivityMainBinding
 import com.kelly.contactapp.models.Contact
@@ -54,8 +56,19 @@ class MainActivity : AppCompatActivity() {
         }
 
         override fun onItemDelete(contact: Contact) {
-            //database.contactDao().deleteContact(contact)
-            viewModel.deleteContact(database, contact)
+            val builder = AlertDialog.Builder(this@MainActivity)
+            builder.setPositiveButton("yes") { _, _ ->
+                viewModel.deleteContact(database, contact)
+                Toast.makeText(
+                    this@MainActivity,
+                    "Successfully removed: ${contact.firstName}",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+            builder.setNegativeButton("No") { _, _ -> }
+            builder.setTitle("Delete ${contact.firstName}?")
+            builder.setMessage("Are you sure you want to delete ${contact.firstName}")
+            builder.create().show()
         }
     }
 }

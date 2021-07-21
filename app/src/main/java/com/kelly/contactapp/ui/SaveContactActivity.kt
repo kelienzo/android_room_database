@@ -32,7 +32,6 @@ class SaveContactActivity : AppCompatActivity() {
     }
 
     private fun addContact() {
-
         val firstname = binding.textInputFirstName.editText?.text.toString()
         val lastName = binding.textInputLastName.editText?.text.toString()
         val cellNumber = binding.textInputNumber.editText?.text.toString()
@@ -48,7 +47,6 @@ class SaveContactActivity : AppCompatActivity() {
             startActivity(intent)
         } else {
             Toast.makeText(this, "Please fill out all fields", Toast.LENGTH_LONG).show()
-
         }
     }
 }

@@ -6,11 +6,8 @@ import androidx.room.*
 
 @Dao
 interface ContactDao {
-    @Query("SELECT * FROM contact_table")
+    @Query("SELECT * FROM contact_table ORDER BY id ASC")
     fun getAllContacts(): List<Contact>
-
-    @Query("SELECT * FROM contact_table WHERE id = :id")
-    fun getContactById(id: Int): Contact
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun addContact(contact: Contact)

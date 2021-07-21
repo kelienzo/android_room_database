@@ -11,4 +11,5 @@
     <string name="update_last_name">Update Last Name</string>
     <string name="update_phone_number">Update Phone Number</string>
     <string name="update_first_name">Update First Name</string>
+    <string name="add">ADD</string>
 </resources>
