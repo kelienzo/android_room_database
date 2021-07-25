@@ -38,11 +38,13 @@ class SaveContactActivity : AppCompatActivity() {
 
         if (firstname.isNotEmpty() && lastName.isNotEmpty() && cellNumber.isNotEmpty()) {
 
-            val contact = Contact(id = 0, firstname, lastName, cellNumber)
-            viewModel.addContact(database, contact)
+            val saveContact =
+                Contact(id = 0, firstname, lastName, cellNumber)
+            // Add contact to database
+            viewModel.addContact(database, saveContact)
 
             Toast.makeText(this, "Successfully Added", Toast.LENGTH_LONG).show()
-
+            // Navigate back
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         } else {

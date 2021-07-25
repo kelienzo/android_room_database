@@ -12,17 +12,14 @@ class ContactAdapter(var contacts: List<Contact>, val listener: OnContactItemCli
     inner class ContactViewHolder(private val binding: ContactListBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun data(contact: Contact) {
+        fun data(contact: Contact, position: Int) {
             binding.apply {
-                tvId.text = contact.id.toString()
+                tvId.text = (position + 1).toString()
                 tvFirstName.text = contact.firstName
                 tvLastName.text = contact.lastName
-                tvCellNumber.text = contact.cellNumber
+                tvCellNumber.text = contact.cellNumber.toString()
                 root.setOnClickListener {
                     listener.onItemClick(contact)
-                }
-                imageDelete.setOnClickListener {
-                    listener.onItemDelete(contact)
                 }
             }
         }
@@ -35,7 +32,7 @@ class ContactAdapter(var contacts: List<Contact>, val listener: OnContactItemCli
     }
 
     override fun onBindViewHolder(holder: ContactViewHolder, position: Int) {
-        holder.data(contacts[position])
+        holder.data(contacts[position], position)
     }
 
     override fun getItemCount(): Int {
@@ -44,6 +41,5 @@ class ContactAdapter(var contacts: List<Contact>, val listener: OnContactItemCli
 
     interface OnContactItemClickListener {
         fun onItemClick(contact: Contact)
-        fun onItemDelete(contact: Contact)
     }
 }

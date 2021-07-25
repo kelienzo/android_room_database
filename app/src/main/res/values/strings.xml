@@ -2,14 +2,16 @@
     <string name="app_name">ContactApp</string>
     <string name="contacts">Contacts</string>
     <string name="save_contact">Save Contact</string>
-    <string name="first_name">First Name</string>
     <string name="update_contact">Update Contact</string>
     <string name="save">Save</string>
     <string name="phone_number">Phone Number</string>
-    <string name="last_name">Last Name</string>
     <string name="update">Update</string>
     <string name="update_last_name">Update Last Name</string>
     <string name="update_phone_number">Update Phone Number</string>
     <string name="update_first_name">Update First Name</string>
     <string name="add">ADD</string>
+    <string name="delete">DELETE</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="cell_number">Cell Number</string>
 </resources>

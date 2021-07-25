@@ -34,7 +34,7 @@
         tools:listitem="@layout/contact_list" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btnAddNew"
+        android:id="@+id/floatingActionBtnAddNew"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"

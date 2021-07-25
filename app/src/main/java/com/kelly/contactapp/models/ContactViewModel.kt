@@ -6,22 +6,22 @@ import androidx.lifecycle.ViewModel
 class ContactViewModel : ViewModel() {
     val contactsLiveData = MutableLiveData<List<Contact>>()
 
-    fun getContact(database: ContactDatabase) {
+    fun getContacts(database: ContactDatabase) {
         contactsLiveData.postValue(database.contactDao().getAllContacts())
     }
 
     fun addContact(database: ContactDatabase, contact: Contact) {
         database.contactDao().addContact(contact)
-        getContact(database)
+        getContacts(database)
     }
 
     fun updateContact(database: ContactDatabase, contact: Contact) {
         database.contactDao().updateContact(contact)
-        getContact(database)
+        getContacts(database)
     }
 
     fun deleteContact(database: ContactDatabase, contact: Contact) {
         database.contactDao().deleteContact(contact)
-        getContact(database)
+        getContacts(database)
     }
 }

@@ -34,7 +34,7 @@
         tools:listitem="@layout/contact_list" />
 
     <ImageButton
-        android:id="@+id/btnAddNew"
+        android:id="@+id/floatingActionBtnAddNew"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
